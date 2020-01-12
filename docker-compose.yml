@@ -1,0 +1,23 @@
+version: '3'
+
+# run from project root
+# EXAMPLE for shared volumes
+
+services:
+  db:
+    container_name: mysql-5.1
+    build: .
+    restart: always
+    volumes:
+      - './mysqldata:/var/lib/mysql'
+      - ./docker-entrypoint.sh:/entrypoint.sh
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: xxx
+      MYSQL_USER: xxx
+      MYSQL_PASSWORD: xxx
+      MYSQL_DATABASE: xxx
+   
+
+          
